@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warframe Themed Page</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1b1f24;
+            color: white;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #0b0d11;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        nav h2 {
+            color: #67c1f5;
+            margin: 0;
+            font-size: 24px;
+            letter-spacing: 2px;
+        }
+
+        nav div {
+            display: flex;
+            gap: 10px;
+        }
+
+        nav button {
+            background-color: #252a33;
+            color: white;
+            padding: 8px 16px;
+            border: 1px solid #3e4755;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border-radius: 4px;
+        }
+
+        nav button:hover {
+            background-color: #67c1f5;
+            border-color: #67c1f5;
+        }
+
+        /* Title Section */
+        div h1 {
+            color: #67c1f5;
+            font-size: 32px;
+        }
+
+        div button {
+            background-color: #252a33;
+            color: white;
+            padding: 10px 20px;
+            margin-right: 10px;
+            border: 1px solid #3e4755;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border-radius: 4px;
+        }
+
+        div button:hover {
+            background-color: #67c1f5;
+            border-color: #67c1f5;
+        }
+
+        /* Content Section */
+        #content {
+            margin: 20px;
+            padding: 10px;
+            background-color: #252a33;
+            border: 1px solid #3e4755;
+            border-radius: 8px;
+        }
+
+        /* Image Placeholder */
+        img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border: 2px solid #67c1f5;
+            border-radius: 10px;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h2>PORTFOLIO</h2>
+        <div>
+            <button onclick="navigate('Home')">Home</button>
+            <button onclick="navigate('Services')">Services</button>
+            <button onclick="navigate('Contact')">Contact</button>
+            <button onclick="navigate('Email')">Email</button>
+        </div>
+    </nav>
+
+    <br>
+
+    <div>
+        <h1>My Journey As An IT Student</h1>
+        <div>
+            <button onclick="showContent('About Me')">About me</button>
+            <button onclick="showContent('Work Experience')">Work Experience</button>
+            <button onclick="showContent('Skills')">Skills</button>
+        </div>
+    </div>
+
+    <br>
+
+    <div>
+        <h1>John Carlo Bermas</h1>
+        <p>"𝐓𝐡𝐞 𝐭𝐢𝐦𝐞 𝐢𝐬 𝐬𝐨 𝐟𝐚𝐬𝐭. 𝐊𝐚𝐲𝐚 𝐩𝐢𝐥𝐢𝐢𝐧 𝐦𝐨 𝐥𝐚𝐠𝐢 𝐦𝐚𝐠𝐢𝐧𝐠 𝐌𝐚𝐬𝐚𝐲𝐚🕰️"</p>
+    </div>
+
+    <br>
+    
+    <img src="img.jpg" alt="Image 1">
+
+    <div id="content"></div>
+
+    <script>
+        // Function to simulate navigation
+        function navigate(page) {
+            const contentDiv = document.getElementById('content');
+            contentDiv.innerHTML = `<h2>Welcome to the ${page} page!</h2><p>This is the ${page} section of the portfolio.</p>`;
+        }
+
+        // Function to dynamically display content
+        function showContent(section) {
+            const contentDiv = document.getElementById('content');
+            let sectionContent;
+
+            if (section === 'About Me') {
+                sectionContent = '<h2>About Me</h2><p>I am an IT student passionate about coding, web development, and problem-solving.</p>';
+            } else if (section === 'Work Experience') {
+                sectionContent = '<h2>Work Experience</h2><p>I have worked on various projects, including web development, app design, and software testing.</p>';
+            } else if (section === 'Skills') {
+                sectionContent = '<h2>Skills</h2><p>Programming, Web Development, Database Management, and Team Collaboration.</p>';
+            }
+
+            contentDiv.innerHTML = sectionContent;
+        }
+    </script>
+</body>
+</html>
